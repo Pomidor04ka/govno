@@ -19,7 +19,9 @@ app.listen(3000, () => console.log("Сервер запущен на порту 
 // Загружаем данные
 let users = fs.existsSync(USERS_FILE) ? JSON.parse(fs.readFileSync(USERS_FILE, "utf8")) : {};
 let bets = fs.existsSync(BETS_FILE) ? JSON.parse(fs.readFileSync(BETS_FILE, "utf8")) : {};
-
+app.get('/', (req, res) => {
+    res.send("WORKING SERVER");
+});
 // Функции сохранения
 function saveUsers() {
     fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
