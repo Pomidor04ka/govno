@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
 const SECRET_KEY = "super_secret";
 const USERS_FILE = "users.json";
 const BETS_FILE = "bets.json";
+app.listen(3000, () => console.log("Сервер запущен на порту 3000"));
 
 // Загружаем данные
 let users = fs.existsSync(USERS_FILE) ? JSON.parse(fs.readFileSync(USERS_FILE, "utf8")) : {};
